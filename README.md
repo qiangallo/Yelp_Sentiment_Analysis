@@ -1,4 +1,4 @@
-# Yelp_Sentiment_Analysis
+# Yelp_Sentiment_Analysis Part 1: Cleaning the Dataset
 Exploring how Yelp user-reviews relates to retakings, through using machine learning models to predict score with natural language processing
 
 #Part 1 Cleaning the Dataset -----------------------------------
@@ -21,12 +21,10 @@ with open('/Users/qian/Desktop/DATA_534/Yelp_JSON/yelp_dataset/yelp_academic_dat
 df_business = pd.DataFrame(business)
 print(df_business.head())
 
-# CSV Save
 #df_business.to_csv('yelp_business_data.csv', index=False)
 
 print(df_business.columns)
 
-# Displaying a sample of unique cities
 print(df_business['city'].unique()[:1000])  # Adjust the number to see more values if needed
 
 #Importing as CSV files for workflow
@@ -77,10 +75,8 @@ def clean_city_name(city):
     city = re.sub(r'(?i)tuscon', 'Tucson', city)
     return city
 
-# Apply function to DataFrame
 df_cleaned['city'] = df_cleaned['city'].apply(clean_city_name)
 
-# Check unique cities after cleaning
 print(df_cleaned['city'].unique())
 
 unique_cities_count2 = df_cleaned['city'].nunique()
@@ -93,11 +89,9 @@ print(unique_cities_count2)
 
 for city in df_cleaned['city'].unique():
     print(city)
-
-# Create a new column that combines city and state to make them unique
+    
 df_cleaned['city_st'] = df_cleaned['city'] + ", " + df_cleaned['state']
 
-# Display the first few rows to verify
 print(df_cleaned[['city', 'state', 'city_st']].head())
 
 #Okay, so there are multiple things that still need to be cleaned
@@ -169,7 +163,6 @@ df_2['city_st'] = df_2['city_st'].replace(city_corrections)
 unique_cities_count3 = df_2['city_st'].nunique()
 print(unique_cities_count3)
 
-# Ensure city_st column exists
 if 'city_st' in df_2.columns:
     # Remove extra commas using regex
     df_2['city_st'] = df_2['city_st'].str.replace(r',\s*,', ',', regex=True)
@@ -179,7 +172,6 @@ if 'city_st' in df_2.columns:
 else:
     print("Column 'city_st' not found in the dataset.")
 
-# Trim any leading or trailing spaces
 df_2['city_st'] = df_2['city_st'].str.strip()
 
 unique_cities_count4 = df_2['city_st'].nunique()
@@ -269,7 +261,6 @@ for city_st in df_4['city_st'].unique():
 
 #still some issues
 
-# Dictionary mapping incorrect city names to standardized versions
 city_standardization = {
     "Saint Louis, MO": "St. Louis, MO",
     "St Louis, MO": "St. Louis, MO",
@@ -299,10 +290,8 @@ city_standardization = {
     "Cherry Hil, NJ": "Cherry Hill, NJ"
 }
 
-# Apply the corrections using the dictionary
 df_4['city_st'] = df_4['city_st'].replace(city_standardization)
 
-# Display the cleaned city names
 print(df_4[['city_st']])
 
 unique_cities_count6 = df_4['city_st'].nunique()
@@ -314,8 +303,6 @@ for city_st in df_4['city_st'].unique():
 df_5 = df_4.copy()
 
 import pandas as pd
-
-# Dictionary mapping incorrect city names to standardized versions
 city_standardization = {
     "Saint Louis, MO": "St. Louis, MO",
     "St Louis, MO": "St. Louis, MO",
@@ -359,10 +346,8 @@ city_standardization = {
     "Murfeesboro, TN": "Murfreesboro, TN"
 }
 
-# Apply corrections using the dictionary
 df_5['city_st'] = df_5['city_st'].replace(city_standardization)
 
-# Display the cleaned city names
 print(df_5[['city_st']])
 
 unique_cities_count7 = df_5['city_st'].nunique()
@@ -412,13 +397,8 @@ city_standardization6 = {
     "Delaware County, PA": "Delaware, PA"
 }
 
-# Apply corrections using the dictionary
 df_6['city_st'] = df_6['city_st'].replace(city_standardization6)
 
-# Remove duplicate city entries (ensuring only unique, formatted names)
-df_6 = df_6.
-
-# Display the cleaned city names
 print(df_6[['city_st']])
 
 unique_cities_count8 = df_6['city_st'].nunique()
@@ -465,7 +445,6 @@ city_standardization7 = {
 }
 df_7['city_st'] = df_7['city_st'].replace(city_standardization7)
 
-# Display the cleaned city names
 print(df_7[['city_st']])
 
 unique_cities_count9 = df_7['city_st'].nunique()
@@ -511,10 +490,8 @@ city_standardization8 = {
     "Meridan, ID": "Meridian, ID"
 }
 
-# Apply corrections using the dictionary
 df_8['city_st'] = df_8['city_st'].replace(city_standardization8)
 
-# Display the cleaned city names
 print(df_8[['city_st']])
 
 unique_cities_count10 = df_8['city_st'].nunique()
@@ -561,10 +538,8 @@ city_standardization9 = {
     "Pennsville, NJ": "Pennsville Township, NJ",
     "Phonixville, PA": "Phoenixville, PA"
 }
-# Apply corrections using the dictionary
 df_9['city_st'] = df_9['city_st'].replace(city_standardization9)
 
-# Display the cleaned city names
 print(df_9[['city_st']])
 
 df_10 = df_9.copy()
@@ -610,10 +585,8 @@ city_standardization10 = {
     "St. Louis, MO": "St. Louis, IL",
     "St. Petersberg, FL": "St. Petersburg, FL"
 }
-# Apply corrections using the dictionary
 df_10['city_st'] = df_10['city_st'].replace(city_standardization10)
 
-# Display the cleaned city names
 print(df_10[['city_st']])
 
 df_11 = df_10.copy()
@@ -658,10 +631,8 @@ city_standardization11 = {
     "Westhampton, NJ": "Westhampton Township, NJ",
     "Westmont - Haddon Towsship, NJ": "Westhampton Township, NJ"  
 }
-# Apply corrections using the dictionary
 df_11['city_st'] = df_11['city_st'].replace(city_standardization11)
 
-# Display the cleaned city names
 print(df_11[['city_st']])
 
 df_12 = df_11.copy()
@@ -684,10 +655,8 @@ city_standardization12 = {
     "Zieglerville, PA": "Zieglersville, PA",
     "Zionsville In, IN": "Zionsville, IN"
 }
-# Apply corrections using the dictionary
 df_12['city_st'] = df_12['city_st'].replace(city_standardization11)
 
-# Display the cleaned city names
 print(df_12[['city_st']])
 
 df_13 = df_12.copy()
@@ -698,10 +667,8 @@ cities_to_drop = [
     "Scott Air Force Base, IL", "Ste C, FL", "Tennesse, TN", "Virtual, PA", "Wyndlake Condominium, FL"
 ]
 
-# Drop rows where city_st is in the drop list
 df_14 = df_13[~df_13['city_st'].isin(cities_to_drop)]
 
-# Display the cleaned DataFrame
 print(df_14)
 
 #drop Arizona, AZ
