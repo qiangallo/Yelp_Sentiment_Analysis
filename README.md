@@ -13,7 +13,7 @@ THE 2023 US CENSUS DATA
 ABOUT THE CODE
 - Note that this is original python code created originally in a Jupyter Notebook split into 4 parts, labled accordingly
 - Within the python files are documented comments that will explain every step of the way
-- Please note the libraries needed to recreate this research project within the python files
+- Please note the libraries needed to recreate this research project are within the python files
 - Thank you
 
 // QUICK SUMMARY OF THE RESEARCH PROJECT //
