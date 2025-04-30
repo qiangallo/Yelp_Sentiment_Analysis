@@ -1,3 +1,16 @@
+// DISCLAIMER AND DATASETS USED // 
+
+THE YELP DATASET
+- Note that I am unable to provide the Yelp datasets from their API updated in 2025 based on the agreement terms to use the Yelp API
+- The API is very easy to obtain though with a quick google search
+- Use the 'business' and 'review' datasets from the larger API
+
+THE 2023 US CENSUS DATA
+- This data is also open-source just like the Yelp API 
+- use the following link to acess the dataset: https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html 
+
+// QUICK SUMMARY OF THE RESEARCH PROJECT //
+
 INTRODUCTION
 - Explore how Yelp user-review text relates to ratings (1-5), aiming to predict scores using machine learning 
 - Process review text through tokenization, removing stopwords, lemmatization, and vectorizing (TF-IDF)
