@@ -10,6 +10,12 @@ THE 2023 US CENSUS DATA
 - use the following link to acess the dataset: https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html
 - this should be labled under 'Vintage 2023' with the subheading 'City and Town Population'
 
+ABOUT THE CODE
+- Note that this is original python code created originally in a Jupyter Notebook split into 4 parts, labled accordingly
+- Within the python files are documented comments that will explain every step of the way
+- Please note the libraries needed to recreate this research project within the python files
+- Thank you
+
 // QUICK SUMMARY OF THE RESEARCH PROJECT //
 
 INTRODUCTION
