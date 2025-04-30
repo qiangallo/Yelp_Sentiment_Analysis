@@ -8,7 +8,7 @@ THE YELP DATASET
 THE 2023 US CENSUS DATA
 - This data is also open-source just like the Yelp API 
 - use the following link to acess the dataset: https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html
-- this should be under the labled under 'Vintage 2023' with the subheading 'City and Town Population'
+- this should be labled under 'Vintage 2023' with the subheading 'City and Town Population'
 
 // QUICK SUMMARY OF THE RESEARCH PROJECT //
 
