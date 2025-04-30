@@ -15,8 +15,8 @@ METHODOLOGY
 - Percentile-based split (equal thirds) of the population data to ensure evenly distributed training data
 - Implemented Random Forest, LightGBM, and Multiclass Logistic Regression
 
-RESULTS
-After playing with the parameters of multiple models, the multiclass logistic regression had the highest accuracy
+RESULTS 
+- After playing with the parameters of multiple models, the multiclass logistic regression had the highest accuracy
 - This model was able to predict a Yelp score based on text language with around 69% accuracy
 - The scoring system: (1/5: Terrible Experience à 5/5: Incredible Experience (with 2-4 showing mixed sentiments))
 - Very effective at predicting 5/5 based on review vocabulary, as well as 1/5 scores
@@ -40,7 +40,7 @@ effectively predict ratings, but results must be interpreted with awareness of d
 and its limitations
 
 FUTURE WORK / APPLICATION 
-Address missing population data
+- Address missing population data
 - Mapping unincorporated areas to the nearest census-
 designated places
 Handle class imbalance more effectively
